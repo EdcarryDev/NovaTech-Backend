@@ -3939,3 +3939,17 @@ app.get('/api/ip', async (req, res) => {
         });
     }
 });
+
+// Root path handler
+app.get('/', (req, res) => {
+    res.json({
+        success: true,
+        message: 'Welcome to MikroTik Connect API',
+        version: '1.0.0',
+        endpoints: {
+            api: '/api',
+            docs: '/api-docs',
+            status: '/api/status'
+        }
+    });
+});
